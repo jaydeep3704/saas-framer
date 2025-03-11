@@ -5,12 +5,12 @@ import Introduction from "@/sections/Introduction";
 import Features from "@/sections/Features";
 export default function Home() {
   return (
-    <>
+    <div className="px-4">
         <Navbar/>
         <Hero/>
         <LogoTicker/>
         <Introduction/>
         <Features/>
-    </>
+    </div>
   );
 }
