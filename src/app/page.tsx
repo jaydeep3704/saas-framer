@@ -3,6 +3,8 @@ import Hero from "@/sections/Hero";
 import LogoTicker from "@/sections/LogoTicker";
 import Introduction from "@/sections/Introduction";
 import Features from "@/sections/Features";
+import Integrations from "@/sections/Integrations";
+
 export default function Home() {
   return (
     <div className="px-4">
@@ -11,6 +13,7 @@ export default function Home() {
         <LogoTicker/>
         <Introduction/>
         <Features/>
+        <Integrations/>
     </div>
   );
 }
