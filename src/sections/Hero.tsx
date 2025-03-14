@@ -7,7 +7,7 @@ import Pointer from '@/components/Pointer'
 
 const Hero = () => {
   return (
-    <section className='py-24 overflow-x-clip'> 
+    <section className='py-24 overflow-x-clip px-4'> 
 
       <div className=' relative'>
             <div className='absolute -top-16 -left-32 hidden lg:block'>

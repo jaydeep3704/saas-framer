@@ -6,6 +6,7 @@ import relumeLogo from "@/assets/images/relume-logo.svg";
 import framerLogo from "@/assets/images/framer-logo.svg";
 import githubLogo from "@/assets/images/github-logo.svg";
 import Image from "next/image";
+import IntegrationsColumn from "@/components/IntegrationsColumn";
 
 const integrations = [
   {
@@ -40,12 +41,13 @@ const integrations = [
   },
 ];
 
-export const integrationsType=typeof integrations
+export type IntegrationsType=typeof integrations
 
 export default function Integrations() {
   return (
-    <section className="py-24">
-      <div className="container">
+    <section className="py-24 px-4">
+      <div className="container mx-auto lg:flex items-center lg:gap-16">
+        <div>
         <Tag>Integrations</Tag>
         <h2 className="font-medium text-6xl mt-6">
           Plays well with <span className="text-lime-400">others</span>
@@ -55,27 +57,13 @@ export default function Integrations() {
           to plug into any workflow and collaborate across platforms
         </p>
 
-        <div className="h-[400px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] mt-8">
-          <div className="flex flex-col gap-4 pb-4 ">
-            {integrations.map((integration) => {
-              return (
-                <div className="bg-neutral-900 border border-white/10 rounded-3xl p-6 ">
-                  <div className="flex justify-center">
-                    <Image
-                      src={integration.icon}
-                      alt={integration.name}
-                      className="size-24 "
-                    />
-                  </div>
-                  <h3 className="text-3xl text-center mt-6">
-                    {integration.name}
-                  </h3>
-                  <p className="text-center text-white/50 mt-2 text-md">
-                    {integration.description}
-                  </p>
-                </div>
-              );
-            })}
+        </div>
+       
+        <div className="h-[400px] lg:h-[800px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] mt-8 lg:mt-0">
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-4 pb-4  ">
+           <IntegrationsColumn integrations={integrations} />
+           <IntegrationsColumn integrations={integrations.slice().reverse()} className="hidden md:flex"/>
+
           </div>
         </div>
       </div>

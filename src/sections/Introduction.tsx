@@ -5,7 +5,7 @@ const Introduction = () => {
 
   return (
 
-    <section className=' py-28 lg:py-40'>
+    <section className=' py-28 lg:py-40 px-4'>
         <div className='container mx-auto'>
             <div className='w-full flex justify-center'>
             <Tag className='text-center'>Introducing Layers</Tag>

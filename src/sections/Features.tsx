@@ -21,7 +21,7 @@ const Features = () => {
 
 
   return (
-    <section className='py-24'>
+    <section className='py-24 px-4'>
       <div className='container mx-auto'>
         <div className='flex justify-center'>
         <Tag >Features</Tag>

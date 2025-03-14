@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes, HTMLAttributes } from 'react'
 import { cva } from 'class-variance-authority';
 
-const classes=cva('px-8 font-medium border  h-12 rounded-full',{
+const classes=cva('px-8 font-medium border  h-12 rounded-full cursor-pointer',{
     variants:{
         variant:{
             primary:'bg-lime-400 text-neutral-950 border-lime-400',

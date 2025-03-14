@@ -1,12 +1,17 @@
 import React from 'react'
-import { integrationsType } from '@/sections/Integrations';
-const IntegrationsColumn = (props:{integrations:typeof integrationsType}) => {
+import  { IntegrationsType } from '@/sections/Integrations';
+import Image from 'next/image';
+import { twMerge } from 'tailwind-merge';
+const IntegrationsColumn = (props:{integrations:IntegrationsType,className?:string}) => {
+  
+  const {integrations,className}=props
+  
   return (
 
-      <div className="flex flex-col gap-4 pb-4 ">
+      <div className={twMerge("flex flex-col gap-4 pb-4 ",className)}>
                   {integrations.map((integration) => {
                     return (
-                      <div className="bg-neutral-900 border border-white/10 rounded-3xl p-6 ">
+                      <div className="bg-neutral-900 border border-white/10 rounded-3xl p-6 " key={integration.name}>
                         <div className="flex justify-center">
                           <Image
                             src={integration.icon}
