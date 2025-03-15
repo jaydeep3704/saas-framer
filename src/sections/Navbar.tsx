@@ -31,6 +31,7 @@ const Navbar = () => {
 
 
   return (
+   <>
     <section className="fixed top-0 flex  p-4 lg:py-8 w-full z-50 ">
       <div className="container max-w-5xl mx-auto">
         <div className="border border-white/15 rounded-[27px] md:rounded-full  bg-neutral-950/70 backdrop-blur ">
@@ -100,7 +101,11 @@ const Navbar = () => {
 
       </div>
     </section>
-  );
+    <div className="pb-[86px] md:pb-[98px] lg:px-[130px]">
+
+    </div>
+   </> 
+     );
 };
 
 export default Navbar;

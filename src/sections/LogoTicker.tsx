@@ -1,4 +1,4 @@
-
+"use client"
 import quantumLogo from "@/assets/images/quantum.svg";
 import acmeLogo from "@/assets/images/acme-corp.svg";
 import echoValleyLogo from "@/assets/images/echo-valley.svg";
@@ -8,6 +8,8 @@ import apexLogo from "@/assets/images/apex.svg";
 import celestialLogo from "@/assets/images/celestial.svg";
 import twiceLogo from "@/assets/images/twice.svg";
 import Image from "next/image";
+import { motion } from "framer-motion"
+import { Fragment } from "react";
 
 const logos = [
     { name: "Quantum", image: quantumLogo },
@@ -24,15 +26,24 @@ export default function LogoTicker() {
     return (<section className="py-24 overflow-x-clip px-4 ">
         <div className="container mx-auto">
             <h3 className="text-center text-white/50">Already chosen by these market leaders</h3>
-            <div className="overflow-hidden mt-12  [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-                <div className="flex gap-24 mx-auto pr-24">
-                {
-                    logos.map((logo)=>{
-                           return    <Image src={logo.image} alt={logo.name} key={logo.name} className=""/>  
-                    })
-                }
-                </div>
-               
+            <div className="overflow-hidden mt-12  [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] flex">
+                <motion.div className="flex flex-none gap-24 mx-auto pr-24" animate={{x:"-50%"}} transition={{ease:"linear",duration:30,repeat:Infinity}}>
+                    
+
+                    {
+                        Array.from({ length: 2 }).map((_, i) => (
+                            <Fragment key={i}>
+                                {
+                                    logos.map((logo) => {
+                                        return <Image src={logo.image} alt={logo.name} key={logo.name} className="" />
+                                    })
+                                }
+
+                            </Fragment>
+                        ))
+                    }
+                </motion.div>
+
             </div>
         </div>
 
